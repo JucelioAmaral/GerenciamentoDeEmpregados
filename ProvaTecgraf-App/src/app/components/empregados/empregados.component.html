@@ -1,0 +1,24 @@
+<mat-card><span class="card">Dados de cada empregado</span>
+  <div class="container">
+    <table id="customers">
+    <thead>
+        <tr>
+            <th scope="col">FirstName</th>
+            <th scope="col">SecondName</th>
+            <th scope="col">Email</th>
+            <th scope="col">DateOfBirth</th>
+            <th scope="col">CurrentlyEmployed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let item of empregados'>
+            <td  mat-header-cell >{{item.firstName}}</td>
+            <td>{{item.secondName}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.dateOfBirth}}</td>
+            <td>{{item.currentlyEmployed}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</mat-card>

@@ -1,0 +1,9 @@
+.mat-toolbar{
+background-color: #4191c0;
+}
+.title{
+    color:  #FFFFFF ;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin-left: 20px
+}

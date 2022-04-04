@@ -55,7 +55,7 @@ namespace ProvaTecgraf.Api.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("ListaEmpregados")]
         public async Task<IActionResult> ListaEmpregados(string termo)
         {
             try
