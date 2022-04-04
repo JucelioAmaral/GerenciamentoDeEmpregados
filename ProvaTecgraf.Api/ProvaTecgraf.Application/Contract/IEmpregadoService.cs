@@ -11,6 +11,6 @@ namespace ProvaTecgraf.Application.Contract
     {
         Task<EmpregadoDto> AddEmpregado(EmpregadoDto model);
         Task<EmpregadoDto> UpdateEmpregado(Guid id, EmpregadoUpdateDto model);
-        Task<EmpregadoDto[]> GetAllEmpregados();
+        Task<EmpregadoDto[]> GetAllEmpregados(string termo);
     }
 }

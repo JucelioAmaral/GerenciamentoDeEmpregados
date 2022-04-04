@@ -11,5 +11,6 @@ namespace ProvaTecgraf.Infrastructure
     {
         Task<Empregado[]> GelAllEmpregados();
         Task<Empregado> GelEmpregadoById(Guid id);
+        Task<Empregado[]> FindEmpregadosByTerm(string termo);
     }
 }

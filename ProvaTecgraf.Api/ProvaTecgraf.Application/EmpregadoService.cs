@@ -55,9 +55,13 @@ namespace ProvaTecgraf.Application
             return null;
         }
 
-        public Task<EmpregadoDto[]> GetAllEmpregados()
+        public async Task<EmpregadoDto[]> GetAllEmpregados(string termo)
         {
-            throw new NotImplementedException();
+            var empregados = await _empregadoRepo.FindEmpregadosByTerm(termo);
+            if (empregados == null) return null;
+
+            var resultado = _mapper.Map<EmpregadoDto[]>(empregados);
+            return resultado;
         }
     }
 }

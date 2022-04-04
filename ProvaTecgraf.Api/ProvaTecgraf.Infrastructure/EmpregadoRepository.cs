@@ -29,5 +29,18 @@ namespace ProvaTecgraf.Infrastructure
             query = query.AsNoTracking().OrderBy(e => e.Id).Where(e => e.Id == id);
             return query.FirstOrDefault();
         }
+
+        public async Task<Empregado[]> FindEmpregadosByTerm(string termo)
+        {
+            IQueryable<Empregado> query = _context.tblEmpregado;
+            query = query.AsNoTracking()
+                         .Where(e => e.FirstName.ToLower().Contains(termo) ||
+                                     e.SecondName.ToLower().Contains(termo) ||
+                                     e.Email.ToLower().Contains(termo) ||
+                                     termo == null)
+                         .OrderBy(e => e.Id);
+
+            return query.ToArray();
+        }
     }
 }

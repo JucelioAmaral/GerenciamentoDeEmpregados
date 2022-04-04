@@ -56,11 +56,14 @@ namespace ProvaTecgraf.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ListaEmpregados()
+        public async Task<IActionResult> ListaEmpregados(string termo)
         {
             try
             {
-                return null;
+                var empregados = await _empregadoService.GetAllEmpregados(termo);
+                if (empregados == null) return null;
+
+                return Ok(empregados);
             }
             catch (Exception ex)
             {
