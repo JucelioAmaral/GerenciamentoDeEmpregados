@@ -10,5 +10,6 @@ namespace ProvaTecgraf.Infrastructure
     public interface IEmpregadoRepository
     {
         Task<Empregado[]> GelAllEmpregados();
+        Task<Empregado> GelEmpregadoById(Guid id);
     }
 }

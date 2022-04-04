@@ -1,11 +1,13 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ProvaTecgraf.Domain
+namespace ProvaTecgraf.Application.Dto
 {
-    public class Empregado
-    {     
+    public class EmpregadoUpdateDto
+    {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }

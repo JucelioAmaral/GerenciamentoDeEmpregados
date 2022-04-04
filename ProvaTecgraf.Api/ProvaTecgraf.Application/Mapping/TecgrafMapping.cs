@@ -14,6 +14,7 @@ namespace ProvaTecgraf.Application.Mapping
         public TecgrafMapping()
         {
             CreateMap<Empregado, EmpregadoDto>().ReverseMap();
+            CreateMap<Empregado, EmpregadoUpdateDto>().ReverseMap();            
         }        
     }
 }

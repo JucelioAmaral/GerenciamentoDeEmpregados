@@ -22,5 +22,12 @@ namespace ProvaTecgraf.Infrastructure
             query = query.AsNoTracking().OrderBy(e => e.Id);
             return query.ToArray();
         }
+
+        public async Task<Empregado> GelEmpregadoById(Guid id)
+        {
+            IQueryable<Empregado> query = _context.tblEmpregado;
+            query = query.AsNoTracking().OrderBy(e => e.Id).Where(e => e.Id == id);
+            return query.FirstOrDefault();
+        }
     }
 }

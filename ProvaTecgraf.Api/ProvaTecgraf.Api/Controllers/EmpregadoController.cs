@@ -39,16 +39,19 @@ namespace ProvaTecgraf.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> AtualizaEmpregado()
+        public async Task<IActionResult> AtualizaEmpregado(Guid id, EmpregadoUpdateDto model)
         {
             try
             {
-                return null;
+                var empregado = await _empregadoService.UpdateEmpregado(id, model);
+                if (empregado == null) return NoContent();
+
+                return Ok(empregado);
             }
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError,
-                    $"Post: Erro ao atualziar o empregado. Erro: {ex.Message}");
+                    $"Post: Erro ao atualizar o empregado. Erro: {ex.Message}");
             }
         }
 

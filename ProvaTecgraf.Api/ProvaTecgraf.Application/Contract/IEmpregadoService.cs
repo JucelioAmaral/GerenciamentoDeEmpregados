@@ -10,7 +10,7 @@ namespace ProvaTecgraf.Application.Contract
     public interface IEmpregadoService
     {
         Task<EmpregadoDto> AddEmpregado(EmpregadoDto model);
-        Task<EmpregadoDto> UpdateEmpregado(EmpregadoDto model);
+        Task<EmpregadoDto> UpdateEmpregado(Guid id, EmpregadoUpdateDto model);
         Task<EmpregadoDto[]> GetAllEmpregados();
     }
 }
