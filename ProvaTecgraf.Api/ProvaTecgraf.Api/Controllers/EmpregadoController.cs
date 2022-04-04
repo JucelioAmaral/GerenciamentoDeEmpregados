@@ -20,7 +20,11 @@ namespace ProvaTecgraf.Api.Controllers
         {
             _empregadoService = empregadoService;
         }
-
+        /// <summary>
+        /// Método para criação dos colaboradores
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>Retorna o empregado após inclusão no banco de dados.</returns>
         [HttpPost]
         public async Task<IActionResult> CriaEmpregado(EmpregadoDto model)
         {
@@ -37,7 +41,12 @@ namespace ProvaTecgraf.Api.Controllers
                     $"Post: Erro ao criar empregado. Erro: {ex.Message}");
             }
         }
-
+        /// <summary>
+        /// Método para alteração em qualquer dado do colaborador
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <returns>Retorna o colaborador escolhido pelo guid e seus dados alterados no banco de dados.</returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> AtualizaEmpregado(Guid id, EmpregadoUpdateDto model)
         {
@@ -54,7 +63,11 @@ namespace ProvaTecgraf.Api.Controllers
                     $"Post: Erro ao atualizar o empregado. Erro: {ex.Message}");
             }
         }
-
+        /// <summary>
+        /// Método para listar todos os empregados ou algum, dependendo do termo que entrar, podendo ser FirstName, SecondName ou  Email.
+        /// </summary>
+        /// <param name="termo"></param>
+        /// <returns>Retorna uma lista todos os empregados ou algum, dependendo do termo que entrar, podendo ser FirstName, SecondName ou  Email.</returns>
         [HttpGet("ListaEmpregados")]
         public async Task<IActionResult> ListaEmpregados(string termo)
         {

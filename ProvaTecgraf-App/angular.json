@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "teste-toro-interface": {
+    "teste-empregado-interface": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/teste-toro-interface",
+            "outputPath": "dist/teste-empregado-interface",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "teste-toro-interface:build:production"
+              "browserTarget": "teste-empregado-interface:build:production"
             },
             "development": {
-              "browserTarget": "teste-toro-interface:build:development"
+              "browserTarget": "teste-empregado-interface:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "teste-toro-interface:build"
+            "browserTarget": "teste-empregado-interface:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "teste-toro-interface"
+  "defaultProject": "teste-empregado-interface"
 }
