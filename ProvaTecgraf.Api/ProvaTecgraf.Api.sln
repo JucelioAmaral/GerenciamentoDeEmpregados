@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaTecgraf.Api", "ProvaTecgraf.Api\ProvaTecgraf.Api.csproj", "{A149D33C-9123-4CBD-8F83-32811C9D8ECA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{56A6746F-624D-4463-B2E7-C288B35D33FC} = {56A6746F-624D-4463-B2E7-C288B35D33FC}
+		{EE96489D-0562-44B2-B362-27E67D173472} = {EE96489D-0562-44B2-B362-27E67D173472}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaTecgraf.Application", "ProvaTecgraf.Application\ProvaTecgraf.Application.csproj", "{56A6746F-624D-4463-B2E7-C288B35D33FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE96489D-0562-44B2-B362-27E67D173472} = {EE96489D-0562-44B2-B362-27E67D173472}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaTecgraf.Infrastructure", "ProvaTecgraf.Infrastructure\ProvaTecgraf.Infrastructure.csproj", "{EE96489D-0562-44B2-B362-27E67D173472}"
+	ProjectSection(ProjectDependencies) = postProject
+		{129D6265-E585-4FA7-A1B7-1306F43A1AB7} = {129D6265-E585-4FA7-A1B7-1306F43A1AB7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvaTecgraf.Domain", "ProvaTecgraf.Domain\ProvaTecgraf.Domain.csproj", "{129D6265-E585-4FA7-A1B7-1306F43A1AB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A149D33C-9123-4CBD-8F83-32811C9D8ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A149D33C-9123-4CBD-8F83-32811C9D8ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A149D33C-9123-4CBD-8F83-32811C9D8ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A149D33C-9123-4CBD-8F83-32811C9D8ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A6746F-624D-4463-B2E7-C288B35D33FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A6746F-624D-4463-B2E7-C288B35D33FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A6746F-624D-4463-B2E7-C288B35D33FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A6746F-624D-4463-B2E7-C288B35D33FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE96489D-0562-44B2-B362-27E67D173472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE96489D-0562-44B2-B362-27E67D173472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE96489D-0562-44B2-B362-27E67D173472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE96489D-0562-44B2-B362-27E67D173472}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129D6265-E585-4FA7-A1B7-1306F43A1AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129D6265-E585-4FA7-A1B7-1306F43A1AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129D6265-E585-4FA7-A1B7-1306F43A1AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129D6265-E585-4FA7-A1B7-1306F43A1AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30E1605A-451C-475B-B337-67F3E7CF3A33}
+	EndGlobalSection
+EndGlobal
