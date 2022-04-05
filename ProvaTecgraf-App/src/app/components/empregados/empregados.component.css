@@ -16,16 +16,16 @@
   #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color:#bef0ff;
     color:#1f073b;
 ;
   }
   .container{
-      padding: 16px;
+      padding: 10px;
   }
 
   .card{
     color:#1f073b;
-    font-weight: bold;
+    font-weight:lighter;
 }

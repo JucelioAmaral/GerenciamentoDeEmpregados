@@ -1,4 +1,32 @@
-<mat-card><span class="card">Employee data</span>
+<div class="card rounded shadow-sm p-3">
+
+  <mat-card><span class="card"></span>
+  <div class="d-flex">
+    <div class="flex-fill pr-">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Filter:</div>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filter by First Name, Second Name and E-mail"
+        />
+          <!-- [(ngModel)]="filtroLista" -->
+
+      </div>
+    </div>
+    <div>
+      <a class="d-flex btn btn-outline-primary" routerLink="/eventos/detalhe">
+        <i class="fa fa-plus-circle my-1"></i>
+        <b class="ml-1 d-none d-sm-block">Novo</b>
+      </a>
+    </div>
+  </div>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-title>Employee data</mat-card-title>
   <div class="container">
     <table id="customers">
     <thead>
@@ -26,6 +54,7 @@
         </td>
       </tr>
     </tfoot>
-</table>
-</div>
+    </table>
+  </div>
 </mat-card>
+</div>
