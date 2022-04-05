@@ -1,13 +1,13 @@
-<mat-card><span class="card">Dados de cada empregado</span>
+<mat-card><span class="card">Employee data</span>
   <div class="container">
     <table id="customers">
     <thead>
         <tr>
-            <th scope="col">FirstName</th>
-            <th scope="col">SecondName</th>
-            <th scope="col">Email</th>
-            <th scope="col">DateOfBirth</th>
-            <th scope="col">CurrentlyEmployed</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Second Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Date of birth</th>
+            <th scope="col">Currently employed</th>
         </tr>
     </thead>
     <tbody>
@@ -15,10 +15,17 @@
             <td  mat-header-cell >{{item.firstName}}</td>
             <td>{{item.secondName}}</td>
             <td>{{item.email}}</td>
-            <td>{{item.dateOfBirth}}</td>
-            <td>{{item.currentlyEmployed}}</td>
+            <td>{{item.dateOfBirth | date: 'MM/dd/yyyy'}}</td>
+            <td>{{item.currentlyEmployed ? "Yes" : "No"}}</td>
         </tr>
     </tbody>
+    <tfoot *ngIf="!empregados.length">
+      <tr>
+        <td colspan="8" class="text-center">
+          <h4>Any employee found!</h4>
+        </td>
+      </tr>
+    </tfoot>
 </table>
 </div>
 </mat-card>
