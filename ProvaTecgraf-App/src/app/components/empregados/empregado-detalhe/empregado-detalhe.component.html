@@ -1,3 +1,87 @@
-<p>
-  empregado-detalhe works!
-</p>
+<div class="row">
+  <div [ngClass]="{'col-md-8 pr-0': modoEditar, 'col-md-12': !modoEditar}">
+    <div class="card rounded shadow-sm">
+      <form [formGroup]="form">
+        <div class="p-3">
+          <!-- <p>Form value: {{form.value | json}}</p>
+            <p>Form valid: {{form.status | json}}</p> -->
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>First Name</label>
+                <input type="text" class="form-control"
+                [ngClass]="cssValidator(f.firstName)"
+                formControlName="firstName" placeholder="Insert the name" [(ngModel)]="empregado.firstName">
+                <div *ngIf="f.firstName.errors?.required" class="invalid-feedback">
+                  First Name is madatory.
+                </div>
+                <div *ngIf="f.firstName.errors?.minlength" class="invalid-feedback">
+                  Have to minimum 4 caracters.
+                </div>
+                <div *ngIf="f.firstName.errors?.maxlength" class="invalid-feedback">
+                  Have to max 50 caracters.
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Second Name</label>
+                <input type="text" class="form-control"
+                [ngClass]="cssValidator(f.secondName)"
+                formControlName="secondName" placeholder="Insert the second name"  [(ngModel)]="empregado.secondName">
+                <div *ngIf="f.secondName.errors?.required && f.secondName.touched" class="invalid-feedback">
+                  Second Name is madatory.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>E-mail</label>
+                <input type="text" class="form-control"
+                [ngClass]="cssValidator(f.email)"
+                formControlName="email" placeholder="e-mail" [(ngModel)]="empregado.email">
+                <div *ngIf="f.email.errors?.required && f.email.touched" class="invalid-feedback">
+                  E-mail is madatory.
+                </div>
+                <div *ngIf="f.email.errors?.email && f.email.touched" class="invalid-feedback">
+                  Have to email valid.
+                </div>
+              </div>
+              <div class="form-group col-md-4">
+                <label>Date</label>
+                <input type="datetime" class="form-control"
+                [ngClass]="cssValidator(f.dateOfBirth)"
+                value="{{empregado.dateOfBirth}}"
+                bsDatepicker
+                [bsConfig]="bsConfigPropriedade"
+                formControlName="dateOfBirth" placeholder="Inform the date" [(ngModel)]="empregado.dateOfBirth">
+                <div *ngIf="f.dateOfBirth.errors?.required && f.dateOfBirth.touched" class="invalid-feedback">
+                  Date is madatory.
+                </div>
+              </div>
+              <div class="form-group col-md-2">
+                <label>Currently Employed</label>
+                <input type="datetime" class="form-control"
+                [ngClass]="cssValidator(f.currentlyEmployed)"
+                value="{{empregado.currentlyEmployed}}"
+                bsDatepicker
+                [bsConfig]="bsConfigPropriedade"
+                formControlName="currentlyEmployed" placeholder="Yes or No" [(ngModel)]="empregado.currentlyEmployed">
+                <div *ngIf="f.currentlyEmployed.errors?.required && f.currentlyEmployed.touched" class="invalid-feedback">
+                  Yes or No is madatory.
+                </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex">
+              <button class="btn btn-outline-secondary mr-auto border" (click)="resetForm()">
+                Cancel Update
+              </button>
+              <button class="btn btn-success" [disabled]="!form.valid" (click)="salvarEmpregado()">
+                <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+                Save Employee
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

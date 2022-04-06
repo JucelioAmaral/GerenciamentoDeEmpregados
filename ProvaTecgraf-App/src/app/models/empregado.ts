@@ -1,5 +1,6 @@
 
 export interface Empregado{
+  id: number;
   firstName: string;
   secondName: string;
   email: string;

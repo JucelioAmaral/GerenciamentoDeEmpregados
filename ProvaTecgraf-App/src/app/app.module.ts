@@ -18,7 +18,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { EmpregadosComponent } from './components/empregados/empregados.component';
 import { EmpregadoListaComponent } from './components/empregados/empregado-lista/empregado-lista.component';
 import { EmpregadoDetalheComponent } from './components/empregados/empregado-detalhe/empregado-detalhe.component';
-
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,12 @@ import { EmpregadoDetalheComponent } from './components/empregados/empregado-det
     BsDatepickerModule.forRoot(),
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 3000, // tempo que a mensagem (this.toastr.success('Evento deletado com sucesso!', 'Deletado.');) ficará sendo exibida na tela.
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      progressBar: true
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

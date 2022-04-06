@@ -20,4 +20,12 @@ export class EmpregadoService {
   public getEmpregados(): Observable<Empregado[]> {
     return this.httpClient.get<Empregado[]>(`${this.baseUrl}/ListaEmpregados`).pipe(take(1));
   }
+
+  public postEmpregado(empregado: Empregado): Observable<Empregado>{
+    return this.httpClient.post<Empregado>(`${this.baseUrl}/CriaEmpregado`, empregado).pipe(take(1));
+  }
+
+  public putEmpregado(id: number, empregado: Empregado): Observable<Empregado>{
+    return this.httpClient.put<Empregado>(`${this.baseUrl}/AtualizaEmpregado/${id}`, empregado).pipe(take(1));
+  }
 }
