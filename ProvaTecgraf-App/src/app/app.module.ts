@@ -10,8 +10,12 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { EmpregadoComponent } from './components/empregados/empregados.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatCardModule} from '@angular/material/card';
-
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,12 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    CollapseModule.forRoot(),
+    TooltipModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
