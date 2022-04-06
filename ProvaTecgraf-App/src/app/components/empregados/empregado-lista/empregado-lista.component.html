@@ -1,0 +1,67 @@
+<div class="card rounded shadow-sm p-3">
+
+  <mat-card>
+  <div class="d-flex">
+    <div class="flex-fill p-3">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Filter:</div>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filter by First Name, Second Name and E-mail"
+          [(ngModel)]="filtroLista"
+         />
+      </div>
+    </div>
+    <div>
+      <div class="flex-fill p-3">
+      <a class="d-flex btn btn-outline-primary" routerLink="/empregados/detalhe">
+        <i class="fa fa-plus-circle my-1"></i>
+        <b class="ml-1 d-none d-sm-block">New employee</b>
+      </a>
+    </div>
+    </div>
+  </div>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-title>Employee data</mat-card-title>
+  <div class="container">
+    <table id="customers">
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Second Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Date of birth</th>
+            <th scope="col">Currently employed</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="empregados && empregados.length">
+        <tr *ngFor="let item of empregosFiltrados">
+            <td>{{item.firstName}}</td>
+            <td>{{item.secondName}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.dateOfBirth | date: 'MM/dd/yyyy'}}</td>
+            <td>{{item.currentlyEmployed ? "Yes" : "No"}}</td>
+        </tr>
+    </tbody>
+    <tfoot *ngIf="!empregados.length">
+      <tr>
+        <td colspan="8" class="text-center">
+          <h4>Any employee found!</h4>
+        </td>
+      </tr>
+    </tfoot>
+    </table>
+  </div>
+</mat-card>
+</div>
+
+<!-- {{empregosFiltrados| json}}
+
+<br>
+
+{{empregados| json}} -->

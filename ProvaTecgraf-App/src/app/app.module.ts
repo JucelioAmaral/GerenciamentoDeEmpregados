@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule} from '@angular/material/toolbar';
-import { EmpregadoComponent } from './components/empregados/empregados.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatCardModule} from '@angular/material/card';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -16,12 +15,17 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { EmpregadosComponent } from './components/empregados/empregados.component';
+import { EmpregadoListaComponent } from './components/empregados/empregado-lista/empregado-lista.component';
+import { EmpregadoDetalheComponent } from './components/empregados/empregado-detalhe/empregado-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    EmpregadoComponent,
+    EmpregadosComponent,
+    EmpregadoListaComponent,
+    EmpregadoDetalheComponent,
   ],
   imports: [
     BrowserModule,
