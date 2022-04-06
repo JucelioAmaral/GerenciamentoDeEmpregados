@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, retry, throwError } from 'rxjs';
+import { catchError, Observable, retry, take, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Empregado } from '../utils/empregado';
 
@@ -9,7 +9,7 @@ import { Empregado } from '../utils/empregado';
 })
 export class EmpregadoService {
 
-  baseUrl = environment.apiURL + 'Empregado/ListaEmpregados'
+  baseUrl = environment.apiURL + 'Empregado'
 
   constructor(
     private httpClient : HttpClient
@@ -17,11 +17,7 @@ export class EmpregadoService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
-  getEmpregados(): Observable<Empregado[]> {
-    return this.httpClient.get<Empregado[]>(this.baseUrl)
-      .pipe(
-        retry(2),
-        catchError(throwError))
+  public getEmpregados(): Observable<Empregado[]> {
+    return this.httpClient.get<Empregado[]>(`${this.baseUrl}/ListaEmpregados`).pipe(take(1));
   }
-
 }

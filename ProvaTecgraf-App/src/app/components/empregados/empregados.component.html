@@ -11,9 +11,8 @@
           type="text"
           class="form-control"
           placeholder="Filter by First Name, Second Name and E-mail"
-        />
-          <!-- [(ngModel)]="filtroLista" -->
-
+          [(ngModel)]="filtroLista"
+         />
       </div>
     </div>
     <div>
@@ -38,9 +37,9 @@
             <th scope="col">Currently employed</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor='let item of empregados'>
-            <td  mat-header-cell >{{item.firstName}}</td>
+    <tbody *ngIf="empregados && empregados.length">
+        <tr *ngFor="let item of empregosFiltrados">
+            <td>{{item.firstName}}</td>
             <td>{{item.secondName}}</td>
             <td>{{item.email}}</td>
             <td>{{item.dateOfBirth | date: 'MM/dd/yyyy'}}</td>
@@ -58,3 +57,9 @@
   </div>
 </mat-card>
 </div>
+
+<!-- {{empregosFiltrados| json}}
+
+<br>
+
+{{empregados| json}} -->

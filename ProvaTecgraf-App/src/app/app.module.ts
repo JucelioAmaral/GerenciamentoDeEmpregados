@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { EmpregadoComponent } from './components/empregados/empregados.component
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { MatCardModule} from '@angular/material/card';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +21,14 @@ import { MatCardModule} from '@angular/material/card';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
