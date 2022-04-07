@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ProvaTecgraf.Application.Dto;
 using ProvaTecgraf.Domain;
+using ProvaTecgraf.Domain.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,11 @@ namespace ProvaTecgraf.Application.Mapping
         public TecgrafMapping()
         {
             CreateMap<Empregado, EmpregadoDto>().ReverseMap();
-            CreateMap<Empregado, EmpregadoUpdateDto>().ReverseMap();            
+            CreateMap<Empregado, EmpregadoUpdateDto>().ReverseMap();
+
+            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<User, UserLoginDto>().ReverseMap();
+            CreateMap<User, UserUpdateDto>().ReverseMap();
         }        
     }
 }

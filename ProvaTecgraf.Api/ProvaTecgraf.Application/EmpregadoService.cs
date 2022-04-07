@@ -29,6 +29,7 @@ namespace ProvaTecgraf.Application
         {
             var empregado = _mapper.Map<Empregado>(model);
             empregado.Id = Guid.NewGuid();
+            empregado.UserId = model.UserdId;
             _geralRepo.Add<Empregado>(empregado);
             if (await _geralRepo.SaveChangesAsync())
             {

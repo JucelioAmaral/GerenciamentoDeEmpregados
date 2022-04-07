@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ProvaTecgraf.Application.Contract;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProvaTecgraf.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class EmpregadoController : ControllerBase
