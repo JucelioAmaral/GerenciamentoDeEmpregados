@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Empregado } from 'src/app/models/empregado';
 import { EmpregadoService } from 'src/app/services/empregado.service';
@@ -19,6 +19,7 @@ export class EmpregadoDetalheComponent implements OnInit {
   estadoSalvar = 'post';
 
   constructor(
+    private fb: FormBuilder,
     private localeService: BsLocaleService,
     private empregadoService: EmpregadoService,
     private spinner: NgxSpinnerService,
@@ -29,6 +30,24 @@ export class EmpregadoDetalheComponent implements OnInit {
      }
 
   ngOnInit() {
+    this.validation();
+  }
+
+  public validation(): void {
+    this.form = this.fb.group({
+      firstName: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(50),
+        ],
+      ],
+      secondName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      dateOfBirth: ['', Validators.required],
+      currentlyEmployed: ['', Validators.required],
+    });
   }
 
   get modoEditar(): boolean{
